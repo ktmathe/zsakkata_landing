@@ -21,7 +21,12 @@
     inherits: false;
     initial-value: #d25525;
 } 
-    
+
+@property --color-text-darkolivegreen {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #6d5040;
+} 
 
 html {
     background-color: var(--color-background-light);
@@ -64,7 +69,7 @@ h1 {
 }
 
 .nav-links a{
-    color: var(--color-text-blue);
+    color: var(--color-text-darkolivegreen);
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 600;
@@ -82,16 +87,45 @@ header {
     height: 800px;
 }
 
-.header-image{
-    transform: scaleX(-1);
-    object-fit: cover;
-    object-position: 0% 75%;
-    width: 100%;
+/* The hero image */
+.hero-image {
+    background-image: url("/header.jpg");
+    /* Set a specific height */
     height: 100%;
-    float: right;
-    /* clip-path: rect(0px 0px 500px 500px); */
-    overflow: scroll;
-}
+  
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  /* Place text in the middle of the image */
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 29%;
+    transform: translate(-50%, -50%);
+    color: var(--color-text-darkolivegreen);
+  }
+
+  .hero-text h1 {
+    font-size: 4.5rem;
+  }
+
+  .hero-text p {
+    font-size: 2.0rem;
+  }
+
+  .hero-text button {
+    font-size: 2.0rem;
+    background-color: var(--color-btn-brown-light);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    padding: 10px 80px 10px 80px;
+  }
 
 .expanded {
     display: unset
