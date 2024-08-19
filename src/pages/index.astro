@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
-import Greeting from "../components/Greeting"
+import ArticleWithImgOnSide from "../components/ArticleWithImgOnSide.astro"
 const pageTitle = "Sweet Home Page"
+const about = (await Astro.glob('./articles/about.md'))[0].frontmatter
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<h2>So awesome blog subtitle</h2>
-	<Greeting client:load messages={["Hello", "Hi", "Hey"]} />
+<ArticleWithImgOnSide frontmatter={about}/>
 </BaseLayout>

@@ -1,0 +1,51 @@
+---
+const {frontmatter} = Astro.props
+---
+<div class="articleContainer">
+    <div class="articleHeader">
+        <Fragment set:html={frontmatter.title} />
+    </div>
+    <div class="articleContent">
+        <div class="articleImage">
+            <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+        </div>    
+        <div class="articleDescription">
+            <p> 
+                <Fragment set:html={frontmatter.description} />
+            </p>
+            <button class="btn">ÉRDEKEL</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .articleHeader {
+        font-size: 2.5em;
+        line-height: 1.0em;
+        font-weight: bold;
+    }
+
+    .articleContainer {
+        margin: 5em 20em;
+    }
+    .articleContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .articleImage {
+        margin-right: 5em;
+    }
+
+    .articleDescription {
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }
+
+    img {
+        width: 600px;
+        border-radius: 20px;
+    }
+
+</style>
