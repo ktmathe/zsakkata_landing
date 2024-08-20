@@ -2,16 +2,19 @@
 import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
 ---
-<header>
-    <div class="hero-image">
-        <div class="hero-text">
-            <h1>Zsák Kata</h1>
-            <p>Önazonos és támogató kommunikáció</p>
-            <button class="btn">ÉRDEKEL</button>
-        </div>
+<div class="hero-container">
+    <picture>
+        <source srcset="/header_small.jpg" media="(max-width: 600px)">
+        <source srcset="/header.jpg" >
+        <img src="/header.jpg" alt="Flowers">
+    </picture>
+    <div class="hero-text">
+        <h1>Zsák Kata</h1>
+        <p>Önazonos és támogató kommunikáció</p>
+        <button class="btn">ÉRDEKEL</button>
     </div>
-    <nav>
-        <Hamburger />
-        <Navigation />
-    </nav>
-</header>
+</div>
+<nav>
+    <Hamburger />
+    <Navigation />
+</nav>

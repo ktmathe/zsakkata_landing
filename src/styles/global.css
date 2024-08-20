@@ -1,7 +1,7 @@
 @property --color-background-light {
     syntax: "<color>";
     inherits: false;
-    initial-value: #FFFAFA;
+    initial-value: #fffafa;
 } 
 
 @property --color-background-darkgray {
@@ -28,17 +28,18 @@
     initial-value: #6d5040;
 } 
 
+
 html {
     background-color: var(--color-background-light);
     font-family: sans-serif;
+    height: 100%;
 }
 
 body {
     margin: 0;
     width: 100%;
-    /* max-width: 80ch; */
-    /* padding: 1rem; */
     line-height: 1.5;
+    height: 100%;
 }
 
 * {
@@ -52,20 +53,32 @@ h1 {
 
 /* nav styles */
 .hamburger {
-    padding-right: 20px;
+    /* padding-right: 20px; */
     cursor: pointer;
+    display: inline-block;
+    padding: 15px 20px;
+    position: absolute;
+    top: 8px;
+    left: 16px;
 }
 
 .hamburger .line {
     display: block;
-    width: 40px;
-    height: 5px;
-    margin-bottom: 10px;
-    background-color: #ff9776;
+    width: 25px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: var(--color-text-darkolivegreen);
 }
 
 .nav-links {
     display: none;
+    position: absolute;
+    top: 60px;
+    padding: 20px 200px 20px 20px;
+    background: linear-gradient(90deg, rgba(255, 250, 250, 1) 0%, rgba(255, 250, 250, 1) 50%, rgba(255, 250, 250, 0) 100%);
+    /* background-color: var(--color-background-light); */
+    opacity: 0.9;
+    
 }
 
 .nav-links a{
@@ -73,6 +86,7 @@ h1 {
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 600;
+    line-height: 40px;
 }
 
 .nav-links a:hover,
@@ -80,45 +94,40 @@ h1 {
     color: var(--color-text-blue-light);
 }
 
-/* header */
-header {
-    position: relative;
-    text-align: center;
-    height: 800px;
+.expanded {
+    display: unset
 }
 
-/* The hero image */
-.hero-image {
-    background-image: url("/header.jpg");
-    /* Set a specific height */
-    height: 100%;
-  
-    /* Position and center the image to scale nicely on all screens */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.hero-container {
     position: relative;
-  }
-  
-  /* Place text in the middle of the image */
-  .hero-text {
+    text-align: center;
+}
+
+.hero-container img{
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
     text-align: center;
     position: absolute;
-    top: 50%;
-    left: 29%;
+    top: 40%;
+    left: 40%;
     transform: translate(-50%, -50%);
     color: var(--color-text-darkolivegreen);
-  }
+}
 
-  .hero-text h1 {
-    font-size: 4.5rem;
-  }
+.hero-text h1 {
+    font-size: 2.5rem;
+}
 
-  .hero-text p {
-    font-size: 2.0rem;
-  }
+.hero-text p {
+    font-size: 1.5rem;
+}
 
-  .btn {
+.btn {
     font-size: 1.5rem;
     background-color: var(--color-btn-brown-light);
     border: none;
@@ -126,26 +135,32 @@ header {
     color: white;
     padding: 10px 80px 10px 80px;
     cursor: pointer;
-  }
+}
 
-  .btn:hover {
+.btn:hover {
     background-color: var(--color-btn-chocolate);
-  }
-
-.expanded {
-    display: unset
 }
 
-html.dark {
-    background-color: #0d0950;
-    color: #fff;
-  }
-  
-.dark .nav-links a {
-    color: #fff;
-}
 
-@media screen and (min-width: 636px) {
+@media screen and (min-width: 600px) {
+    .hero-text {
+        top: 50%;
+        left: 29%;
+    }
+     
+    .hero-text h1 {
+        font-size: 4.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 2.0rem;
+    }
+
+    .hero-container img{
+        width: 100%;
+        height: 600px;
+    }  
+    
     .nav-links {
         margin-left: 5em;
         display: block;
@@ -165,5 +180,9 @@ html.dark {
         display: none;
     }
 }
+
+
+
+
 
 
