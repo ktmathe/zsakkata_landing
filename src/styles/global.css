@@ -82,6 +82,7 @@ h1 {
 }
 
 .nav-links a{
+    display: block;
     color: var(--color-text-darkolivegreen);
     text-transform: uppercase;
     text-decoration: none;
