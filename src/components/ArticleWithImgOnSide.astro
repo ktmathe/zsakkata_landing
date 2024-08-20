@@ -5,47 +5,75 @@ const {frontmatter} = Astro.props
     <div class="articleHeader">
         <Fragment set:html={frontmatter.title} />
     </div>
-    <div class="articleContent">
-        <div class="articleImage">
+    <div class="articleImage">
+        <picture>
+            <source srcset="/about_small.jpg" media="(max-width: 600px)">
+            <source srcset="/about.jpg" >
             <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
-        </div>    
-        <div class="articleDescription">
-            <p> 
-                <Fragment set:html={frontmatter.description} />
-            </p>
-            <button class="btn">ÉRDEKEL</button>
-        </div>
+        </picture>
+    </div>    
+    <div class="articleDescription">
+        <p> 
+            <Fragment set:html={frontmatter.description} />
+        </p>
+        <button class="btn">ÉRDEKEL</button>
     </div>
 </div>
 
 <style>
+.articleContainer, .articleHeader, .articleImage, .articleDescription {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.articleHeader {
+    display: block;
+    font-size: 2.0em;
+    line-height: 0.5em;
+    font-weight: bold;
+}
+
+.articleImage img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+} 
+
+.articleDescription {
+    font-size: 1.0em;
+    line-height: 1.5em;
+} 
+
+@media screen and (min-width: 1395px) {
+    
+    .articleContainer, .articleHeader, .articleImage, .articleDescription {
+        width: 100%;
+    }   
+
+    .articleContainer {        
+        display: grid;
+        column-gap: 50px;
+        grid-template-columns: auto 600px 600px auto;
+    }
+
     .articleHeader {
+        grid-column: 2 / span 3;
         font-size: 2.5em;
-        line-height: 1.0em;
+        line-height: 0.5em;
         font-weight: bold;
     }
 
-    .articleContainer {
-        margin: 5em 20em;
-    }
-    .articleContent {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
     .articleImage {
-        margin-right: 5em;
+        grid-column: 2 / span 1;
     }
 
     .articleDescription {
+        grid-column: 3 / span 1;
         font-size: 1.5em;
         line-height: 1.5em;
-    } */
-
-    img {
-        width: 600px;
-        border-radius: 20px;
-    }
+    } 
+}
 
 </style>
