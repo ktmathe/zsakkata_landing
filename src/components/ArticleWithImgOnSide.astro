@@ -5,6 +5,16 @@ const {frontmatter} = Astro.props
     <div class="articleHeader">
         <Fragment set:html={frontmatter.title} />
     </div>
+    
+    <div class:list={['articleImage', 
+        {articleImageOnLeft: frontmatter.imageSide==='left'}, 
+        {articleImageOnRight: frontmatter.imageSide==='right'}]}>
+        <picture>
+            <source srcset={frontmatter.image.url_big} media="(max-width: 600px)">
+            <source srcset={frontmatter.image.url_small} >
+            <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+        </picture>
+    </div>   
 
     <div class:list={['articleDescription', 
     {articleDescriptionOnRight: frontmatter.imageSide==='left'}, 
@@ -14,16 +24,6 @@ const {frontmatter} = Astro.props
         </p>
         <button class="btn"><Fragment set:html={frontmatter.buttonText} /></button>
     </div>
-
-    <div class:list={['articleImage', 
-        {articleImageOnLeft: frontmatter.imageSide==='left'}, 
-        {articleImageOnRight: frontmatter.imageSide==='right'}]}>
-        <picture>
-            <source srcset="/about_small.jpg" media="(max-width: 600px)">
-            <source srcset="/about.jpg" >
-            <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
-        </picture>
-    </div>    
 
 </div>
 
