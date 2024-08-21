@@ -1,0 +1,118 @@
+---
+const {reviews} = Astro.props
+---
+<div class="reviewContainer">
+    <div class="reviewHeader">Vélemények</div>
+    <div class="reviewGrid">
+        {reviews.map((review) => (
+            <div class="reviewCard">
+
+                <div class=reviewImage>
+                    <img src={review.frontmatter.image.url} alt={review.frontmatter.image.alt} />
+                </div>   
+                <div class="reviewName">
+                    <Fragment set:html={review.frontmatter.name} />
+                </div>
+                <div class=reviewDescription>
+                    <p> 
+                        <Fragment set:html={review.frontmatter.review} />
+                    </p>
+                    <div class="fivestar"></div>
+                </div>    
+            </div>            
+        ))}
+    </div>
+</div>
+<style>
+
+.reviewContainer {
+    margin-top: 5em;
+}
+
+.fivestar{
+    background-image: url("/fivestar.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50px;
+    
+}
+
+.reviewCard {
+    margin-bottom: 2em;
+    padding: 1em;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    background-color: #f7e5ddb6;
+}
+
+.reviewCard, .reviewHeader, .reviewImage, .reviewDescription, .fivestar, .reviewContainer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.reviewHeader {
+    text-align: center;
+    display: block;
+    margin-bottom: 2em;
+    font-size: 2.5em;
+    line-height: 0.5em;
+    font-weight: bold;
+}
+
+.reviewName {
+    text-align: center;
+    display: block;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.reviewImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    width: 80%;
+}
+
+.reviewImage img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+} 
+
+.reviewDescription {
+    font-size: 1.0em;
+    line-height: 1.5em;
+} 
+
+@media screen and (min-width: 1395px) {
+    .reviewGrid {        
+        display: grid;
+        column-gap: 80px;
+        grid-template-columns: 400px 400px 400px;
+    }
+
+    /* .reviewCard, .reviewHeader, 
+    .reviewImage, .reviewDescription {
+        width: 100%;
+        display: inline-block;
+    }    */
+
+    .reviewHeader {
+        /* grid-row: 1;
+        grid-column: 2 / span 3;
+        font-size: 2.5em;
+        line-height: 0.5em;
+        font-weight: bold; */
+    }
+    .reviewDescription{
+        /* font-size: 1.5em;
+        line-height: 1.5em; */
+    }
+}
+
+</style>

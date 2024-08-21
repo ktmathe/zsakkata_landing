@@ -4,6 +4,6 @@ import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://checkmateblog.netlify.app/",
+  site: "https://zsakkata.netlify.app/",
   integrations: [preact()]
 });
