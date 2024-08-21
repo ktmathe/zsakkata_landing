@@ -3,7 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 import ArticleWithImgOnSide from "../components/ArticleWithImgOnSide.astro"
 const pageTitle = "Zsák Kata - önazonos és támogató kommunikáció"
 const about = (await Astro.glob('./articles/about.md'))[0].frontmatter
+const workshops = (await Astro.glob('./articles/workshops.md'))[0].frontmatter
 ---
 <BaseLayout pageTitle={pageTitle}>
 <ArticleWithImgOnSide frontmatter={about}/>
+<ArticleWithImgOnSide frontmatter={workshops}/>
+<ArticleWithImgOnSide frontmatter={workshops}/>
 </BaseLayout>
