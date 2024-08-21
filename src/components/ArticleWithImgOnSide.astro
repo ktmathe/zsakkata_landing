@@ -10,9 +10,9 @@ const {frontmatter} = Astro.props
         {articleImageOnLeft: frontmatter.imageSide==='left'}, 
         {articleImageOnRight: frontmatter.imageSide==='right'}]}>
         <picture>
-            <source srcset={frontmatter.image.url_big} media="(max-width: 600px)">
-            <source srcset={frontmatter.image.url_small} >
-            <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+            <source srcset={frontmatter.image.url_small} media="(max-width: 600px)">
+            <source srcset={frontmatter.image.url_big} >
+            <img src={frontmatter.image.url_big} alt={frontmatter.image.alt} />
         </picture>
     </div>   
 

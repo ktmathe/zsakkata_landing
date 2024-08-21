@@ -5,7 +5,7 @@ description: '<p>Hiszem, hogy nem kell egyedül csinálnod és hiszem, hogy te t
  <p>Egyéni marketing és kommunikációs tanácsadás integrált coaching szemlélettel.</p>'
 buttonText: "ÉRDEKEL"
 image: 
-    url_big: '/about.jpg'
+    url_big: '/about_big.jpg'
     url_small: '/about_small.jpg'
     alt: 'Rólam'
 imageSide: 'right'
