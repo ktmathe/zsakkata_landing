@@ -12,7 +12,7 @@ const {frontmatter} = Astro.props
         <p> 
             <Fragment set:html={frontmatter.description} />
         </p>
-        <button class="btn">ÉRDEKEL</button>
+        <button class="btn"><Fragment set:html={frontmatter.buttonText} /></button>
     </div>
 
     <div class:list={['articleImage', 
