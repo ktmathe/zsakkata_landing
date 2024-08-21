@@ -6,6 +6,7 @@ description: '<p>Hiszem, hogy nem kell egyedül csinálnod és hiszem, hogy te t
 image: 
     url: '/about.jpg'
     alt: 'Rólam'
+imageSide: 'right'
 ---
 Egyéni kommunikációs és social media mentorálást tartok alkotóknak, művészeknek, egyéni vállalkozóknak, coachoknak, jóga tanároknak... bárkinek, aki úgy érzi elakadt.
 
