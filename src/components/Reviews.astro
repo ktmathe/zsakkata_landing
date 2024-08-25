@@ -17,8 +17,8 @@ const {reviews} = Astro.props
                     <p> 
                         <Fragment set:html={review.frontmatter.review} />
                     </p>
-                    <div class="fivestar"></div>
                 </div>    
+                <div class="fivestar"></div>
             </div>            
         ))}
     </div>
@@ -29,15 +29,25 @@ const {reviews} = Astro.props
     margin-top: 5em;
 }
 
+.reviewGrid {        
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
 .fivestar{
     background-image: url("/fivestar.svg");
     background-repeat: no-repeat;
     background-position: center;
     height: 50px;
-    
+    margin-top: auto;
+
 }
 
 .reviewCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 2em;
     padding: 1em;
     border-radius: 20px;
@@ -45,7 +55,7 @@ const {reviews} = Astro.props
     background-color: #f7e5ddb6;
 }
 
-.reviewCard, .reviewHeader, .reviewImage, .reviewDescription, .fivestar, .reviewContainer {
+.reviewHeader, .reviewImage, .reviewDescription, .fivestar, .reviewContainer {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -91,27 +101,15 @@ const {reviews} = Astro.props
 
 @media screen and (min-width: 1395px) {
     .reviewGrid {        
-        display: grid;
-        column-gap: 80px;
-        grid-template-columns: 400px 400px 400px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
     }
 
-    /* .reviewCard, .reviewHeader, 
-    .reviewImage, .reviewDescription {
-        width: 100%;
-        display: inline-block;
-    }    */
-
-    .reviewHeader {
-        /* grid-row: 1;
-        grid-column: 2 / span 3;
-        font-size: 2.5em;
-        line-height: 0.5em;
-        font-weight: bold; */
-    }
-    .reviewDescription{
-        /* font-size: 1.5em;
-        line-height: 1.5em; */
+    .reviewCard {
+        width: 400px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 
