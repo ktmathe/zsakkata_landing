@@ -1,13 +1,24 @@
 ---
 const {platform, username} = Astro.props;
 ---
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a class:list={[{facebook: platform==="facebook"}, {insta: platform==="instagram"}]} href={`https://www.${platform}.com/${username}`}></a>
 
 <style>
     a {
-        padding: 0.5rem 1rem;
-        color: white;
-        background-color: #4c1d95;
-        text-decoration: none;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: 50px;
+        background-position: center;
+        height: 55px;
+        width: 55px;
+        margin: 0.5em;
+    }
+
+    .facebook {
+        background-image: url("/facebook.svg");
+    }
+
+    .insta {
+        background-image: url("/instagram.svg");
     }
 </style>

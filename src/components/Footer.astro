@@ -1,16 +1,101 @@
 ---
 import Social from "./Social.astro"
 ---
+<footer>
+    <div class="container">
+        <div class="contact">
+            <h1>Kapcsolat</h1>
+            <h2>EMAIL</h2>
+            <p>zsakkata@gmail.com</p>
+            <h2>TELEFON</h2>
+            <p>+36 20 572 1811</p>
+            <div class="social">
+                <Social platform="facebook" username="zsak.kata.kommunikacio/"/>
+                <Social platform="instagram" username="zsak.kata.kommunikacio/"/>
+            </div>
+        </div>
+        <picture>
+            <source srcset="/footer_kata.webp" media="(max-width: 600px)">
+            <source srcset="/footer_kata.webp" >
+            <img src="/footer_kata.webp" alt="Zsák Kata">
+        </picture>
+    </div>
+</footer>
+
 <style>
     footer {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
+        background-image: url("/footer.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 932px;
+        box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.8);
     }
-</style>
 
-<footer>
-    <Social platform="twitter" username="astrodotbuild"/>
-    <Social platform="github" username="withastro"/>
-    <Social platform="youtube" username="astrodotbuild"/>
-</footer>
+    .container{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        padding-top: 2em;
+        /* background-color: rgba(255, 250, 250, 0.7); */
+    }
+
+    .contact {
+        padding: 2em;
+        align-self: center;
+        margin-bottom: 2em;
+    }
+
+    .contact h1 {
+        font-size: 2.5em;
+        margin-bottom: 1em;
+        font-weight: 600;
+    }
+
+    .contact h2 {
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+        font-weight: 600;
+    }
+
+    .contact p {
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+
+    .social {
+        display: flex;
+        flex-direction: row;
+    } 
+    
+    .container img {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-radius: 0px;
+    }
+
+    @media screen and (min-width: 1395px) {
+        footer {
+            background-position: 0px -800px;
+            height: 700px;
+        }
+
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            flex-direction: row;
+            
+            justify-content: center;
+            padding-top: 2em;
+        }
+        .container img {
+            width: 55%;
+            border-radius: 25px;
+        }
+    }
+
+</style>

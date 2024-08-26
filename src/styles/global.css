@@ -7,7 +7,7 @@
 @property --color-background-darkgray {
     syntax: "<color>";
     inherits: false;
-    initial-value: #b7a59c;
+    initial-value: rgb(183, 165, 156);
 } 
 
 @property --color-btn-brown-light {
