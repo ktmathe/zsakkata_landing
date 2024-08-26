@@ -33,6 +33,7 @@ html {
     background-color: var(--color-background-light);
     font-family: sans-serif;
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
