@@ -5,10 +5,12 @@ import Reviews from "../components/Reviews.astro"
 const pageTitle = "Zsák Kata - önazonos és támogató kommunikáció"
 const about = (await Astro.glob('./articles/about.md'))[0].frontmatter
 const workshops = (await Astro.glob('./articles/workshops.md'))[0].frontmatter
+const business = (await Astro.glob('./articles/business.md'))[0].frontmatter
 const reviews = await Astro.glob('../pages/reviews/*.md')
 ---
 <BaseLayout pageTitle={pageTitle}>
 <ArticleWithImgOnSide frontmatter={about}/>
 <ArticleWithImgOnSide frontmatter={workshops}/>
+<ArticleWithImgOnSide frontmatter={business}/>
 <Reviews reviews={reviews} />
 </BaseLayout>

@@ -28,6 +28,10 @@ const {frontmatter} = Astro.props
 </div>
 
 <style>
+.articleContainer {
+    margin-bottom: 4em;
+}
+
 .articleContainer, .articleHeader, .articleImage, .articleDescription {
     display: block;
     margin-left: auto;
@@ -77,6 +81,7 @@ const {frontmatter} = Astro.props
     .articleDescription{
         font-size: 1.5em;
         line-height: 1.5em;
+        align-self: center;
     }
 
     .articleImageOnLeft {
