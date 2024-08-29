@@ -1,7 +1,7 @@
 ---
 title: '<p>Cégeknek</p>'
 description: '<ul><li>Asszertív kommunikáció</li>
-<li>EMK (ErőszakMentes Kommunikáció),  Kommunikációs tréningek</li>
+<li>EMK (ErőszakMentes Kommunikáció) tréningek</li>
 <li>Social média továbbképzés</li></ul>'
 buttonText: "ÉRDEKEL"
 buttonLink: "/szolgaltatasok#cegeknek"
