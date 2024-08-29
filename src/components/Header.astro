@@ -2,7 +2,8 @@
 import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
 ---
-<div class="hero-container">
+<section>
+<div class="container">
     <picture>
         <source srcset="/header_small.webp" media="(max-width: 600px)">
         <source srcset="/header.webp" >
@@ -10,11 +11,65 @@ import Navigation from "./Navigation.astro";
     </picture>
     <div class="hero-text">
         <h1>Zsák Kata</h1>
-        <p>Önazonos és támogató kommunikáció</p>
-        <button class="btn">ÉRDEKEL</button>
+        <h2>Önazonos és támogató kommunikáció</h2>
     </div>
+
 </div>
 <nav>
     <Hamburger />
     <Navigation />
 </nav>
+</section>
+
+<style>
+
+.container {
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+
+.container img{
+    object-fit: cover;
+    width: 100%;
+    height: 350px;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: var(--color-text-darkolivegreen);
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+}
+
+.hero-text h2 {
+    font-size: 1.0rem;
+}
+
+
+@media screen and (min-width: 600px) {
+    .hero-text {
+        top: 40%;
+        left: 33%;
+    }
+     
+    .hero-text h1 {
+        font-size: 4.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 2.0rem;
+    }
+
+    .container img{
+        width: 100%;
+        height: 600px;
+    }  
+}
+</style>
