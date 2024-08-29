@@ -9,11 +9,15 @@ const {frontmatter} = Astro.props
     <div class:list={['articleImage', 
         {articleImageOnLeft: frontmatter.imageSide==='left'}, 
         {articleImageOnRight: frontmatter.imageSide==='right'}]}>
-        <picture>
+        <picture class:list={[{hide: frontmatter.image.url_big === ''}]}>
             <source srcset={frontmatter.image.url_small} media="(max-width: 600px)">
             <source srcset={frontmatter.image.url_big} >
             <img src={frontmatter.image.url_big} alt={frontmatter.image.alt} />
         </picture>
+        <video class:list={[{hide: frontmatter.video.url === ''}]} controls>
+            <source src={frontmatter.video.url} type="video/mp4">
+            {frontmatter.video.alt}
+        </video>
     </div>   
 
     <div class:list={['articleDescription', 
@@ -22,7 +26,11 @@ const {frontmatter} = Astro.props
         <p> 
             <Fragment set:html={frontmatter.description} />
         </p>
-        <button class="btn"><Fragment set:html={frontmatter.buttonText} /></button>
+        <a href={frontmatter.buttonLink}>
+            <button class:list={["btn", {"hide": frontmatter.buttonText === ""}]}>
+                <Fragment set:html={frontmatter.buttonText} />
+            </button>
+        </a>
     </div>
 
 </div>
@@ -58,6 +66,15 @@ const {frontmatter} = Astro.props
     font-size: 1.0em;
     line-height: 1.5em;
 } 
+
+.hide {
+    display: none;
+}
+
+video {
+    width: 100%;
+    border-radius: 20px;
+}
 
 @media screen and (min-width: 1395px) {
     

@@ -1,0 +1,34 @@
+---
+import ArticleWithImgOnSide from "../components/ArticleWithImgOnSide.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Zsák Kata - Szolgáltatások";
+const egyeni = (await Astro.glob('./articles/egyeni.md'))[0].frontmatter
+const elkezdem = (await Astro.glob('./articles/elkezdem.md'))[0].frontmatter
+const folytatom = (await Astro.glob('./articles/folytatom.md'))[0].frontmatter
+const cegeknek = (await Astro.glob('./articles/cegeknek.md'))[0].frontmatter
+
+---
+
+<BaseLayout pageTitle={pageTitle}>
+
+<section id="szolgaltatasok">
+<div class="container">
+    <ArticleWithImgOnSide frontmatter={egyeni}/>
+    <ArticleWithImgOnSide frontmatter={elkezdem}/>
+    <ArticleWithImgOnSide frontmatter={folytatom}/>
+    <ArticleWithImgOnSide frontmatter={cegeknek}/>
+</div>  
+</section>
+
+</BaseLayout>
+
+<style>
+
+    .container {
+        max-width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px;
+    }
+</style>
