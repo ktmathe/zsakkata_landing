@@ -14,7 +14,7 @@ const {frontmatter} = Astro.props
             <source srcset={frontmatter.image.url_big} >
             <img src={frontmatter.image.url_big} alt={frontmatter.image.alt} />
         </picture>
-        <video class:list={[{hide: frontmatter.video.url === ''}]} controls>
+        <video autoplay muted loop class:list={[{hide: frontmatter.video.url === ''}]} controls>
             <source src={frontmatter.video.url} type="video/mp4">
             {frontmatter.video.alt}
         </video>
