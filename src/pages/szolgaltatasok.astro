@@ -1,5 +1,6 @@
 ---
 import ArticleWithImgOnSide from "../components/ArticleWithImgOnSide.astro";
+import SlideShow from "../components/SlideShow.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "Zsák Kata - Szolgáltatások";
@@ -14,21 +15,38 @@ const cegeknek = (await Astro.glob('./articles/cegeknek.md'))[0].frontmatter
 
 <section id="szolgaltatasok">
 <div class="container">
-    <ArticleWithImgOnSide frontmatter={egyeni}/>
-    <ArticleWithImgOnSide frontmatter={elkezdem}/>
-    <ArticleWithImgOnSide frontmatter={folytatom}/>
-    <div id="cegeknek"><ArticleWithImgOnSide frontmatter={cegeknek}/></div>
+    <section id="egyeni">
+        <ArticleWithImgOnSide frontmatter={egyeni}/>
+        <ArticleWithImgOnSide frontmatter={elkezdem}/>
+        <ArticleWithImgOnSide frontmatter={folytatom}/>
+    </section>
+    <section id="cegeknek">
+        <ArticleWithImgOnSide frontmatter={cegeknek}/>
+    </section>
+    <section id="workshop">
+        <div class="workshopContainer">
+            <h1>Workshopok</h1>
+            <h2>Aktuális workshopokról a Facebook eseményekben találsz infót</h2>
+        </div>
+        <SlideShow images={["ws1.webp","ws2.webp","ws3.webp","ws4.webp","ws5.webp","ws6.webp"]}/>
+    </section>
 </div>  
 </section>
 
 </BaseLayout>
 
 <style>
+    #szolgaltatasok {
+        margin-bottom: 50px;
+    }
 
-    .container {
-        max-width: 1300px;
+    .workshopContainer {
+        max-width: 1200px;
+        padding-left: 10px;
+        padding-right: 10px;
         margin-left: auto;
         margin-right: auto;
-        padding: 0 20px;
+        width: 100%;
+        text-align: center;
     }
 </style>
