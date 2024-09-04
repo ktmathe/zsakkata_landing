@@ -1,6 +1,7 @@
 ---
 const {reviews} = Astro.props
 ---
+<section>
 <div class="reviewContainer">
     <div class="reviewHeader">Vélemények</div>
     <div class="reviewGrid">
@@ -23,10 +24,13 @@ const {reviews} = Astro.props
         ))}
     </div>
 </div>
+</section>
 <style>
 
 .reviewContainer {
-    margin-top: 5em;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .reviewGrid {        
@@ -59,7 +63,7 @@ const {reviews} = Astro.props
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 85%;
 }
 
 .reviewHeader {
@@ -99,17 +103,15 @@ const {reviews} = Astro.props
     line-height: 1.5em;
 } 
 
-@media screen and (min-width: 1395px) {
+@media screen and (min-width: 1200px) {
     .reviewGrid {        
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         flex-direction: row;
     }
 
     .reviewCard {
-        width: 400px;
-        margin-left: 20px;
-        margin-right: 20px;
+        width: 350px;
     }
 }
 
