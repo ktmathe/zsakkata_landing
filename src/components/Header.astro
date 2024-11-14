@@ -3,6 +3,10 @@ import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
 ---
 <section>
+<nav>
+    <Hamburger />
+    <Navigation />
+</nav>
 <div class="container">
     <picture>
         <source srcset="/header_small.webp" media="(max-width: 600px)">
@@ -13,12 +17,7 @@ import Navigation from "./Navigation.astro";
         <h1>Zsák Kata</h1>
         <h2>Önazonos és támogató kommunikáció</h2>
     </div>
-
 </div>
-<nav>
-    <Hamburger />
-    <Navigation />
-</nav>
 </section>
 
 <style>
@@ -70,7 +69,7 @@ import Navigation from "./Navigation.astro";
 
     .container img{
         width: 100%;
-        height: 600px;
+        height: 720px;
     }  
 }
 </style>

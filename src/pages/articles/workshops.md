@@ -2,7 +2,7 @@
 title: '<p>Workshopok</p>'
 description: '<p>Workshopok keretében csoportosan is megtanulhatod a kommunikációs, marketing és social média alapokat.</p>'
 buttonText: "ÉRDEKEL"
-buttonLink: "#kapcsolat"
+buttonLink: "/szolgaltatasok#workshop"
 image: 
     url_big: '/workshops_big.webp'
     url_small: '/workshops_small.webp'

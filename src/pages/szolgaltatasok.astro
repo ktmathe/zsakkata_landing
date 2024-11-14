@@ -13,17 +13,18 @@ const cegeknek = (await Astro.glob('./articles/cegeknek.md'))[0].frontmatter
 
 <BaseLayout pageTitle={pageTitle}>
 
-<section id="szolgaltatasok">
+<section id="szolgaltatasok" class="section">
+<h1 class="pageHeader">Szolgáltatások</h1>
 <div class="container">
     <section id="egyeni">
         <ArticleWithImgOnSide frontmatter={egyeni}/>
         <ArticleWithImgOnSide frontmatter={elkezdem}/>
         <ArticleWithImgOnSide frontmatter={folytatom}/>
     </section>
-    <section id="cegeknek">
+    <section id="cegeknek" class="section">
         <ArticleWithImgOnSide frontmatter={cegeknek}/>
     </section>
-    <section id="workshop">
+    <section id="workshop" class="section">
         <div class="workshopContainer">
             <h1>Workshopok</h1>
             <h2>Aktuális workshopokról a Facebook eseményekben találsz infót</h2>
@@ -36,10 +37,6 @@ const cegeknek = (await Astro.glob('./articles/cegeknek.md'))[0].frontmatter
 </BaseLayout>
 
 <style>
-    #szolgaltatasok {
-        margin-bottom: 50px;
-    }
-
     .workshopContainer {
         max-width: 1200px;
         padding-left: 10px;
