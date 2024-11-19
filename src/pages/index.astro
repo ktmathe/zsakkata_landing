@@ -4,13 +4,14 @@ import ArticleWithImgOnSide from "../components/ArticleWithImgOnSide.astro"
 import Reviews from "../components/Reviews.astro"
 import Intro from "../components/Intro.astro"
 const pageTitle = "Zsák Kata - önazonos és támogató kommunikáció"
+const intro = (await Astro.glob('./articles/intro.md'))[0].frontmatter
 const about = (await Astro.glob('./articles/about.md'))[0].frontmatter
 const workshops = (await Astro.glob('./articles/workshops.md'))[0].frontmatter
 const business = (await Astro.glob('./articles/business.md'))[0].frontmatter
 const reviews = await Astro.glob('../pages/reviews/*.md')
 ---
 <BaseLayout pageTitle={pageTitle}>
-<Intro/>
+<ArticleWithImgOnSide frontmatter={intro}/>
 <ArticleWithImgOnSide frontmatter={about}/>
 <ArticleWithImgOnSide frontmatter={workshops}/>
 <ArticleWithImgOnSide frontmatter={business}/>

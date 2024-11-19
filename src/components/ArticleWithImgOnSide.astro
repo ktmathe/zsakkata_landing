@@ -9,7 +9,8 @@ const {frontmatter} = Astro.props
     
     <div class:list={['articleImage', 
         {articleImageOnLeft: frontmatter.imageSide==='left'}, 
-        {articleImageOnRight: frontmatter.imageSide==='right'}]}>
+        {articleImageOnRight: frontmatter.imageSide==='right'},
+        {articleImageNone: frontmatter.imageSide==='none'}]}>
         <picture class:list={[{hide: frontmatter.image.url_big === ''}]}>
             <source srcset={frontmatter.image.url_small} media="(max-width: 600px)">
             <source srcset={frontmatter.image.url_big} >
@@ -22,8 +23,9 @@ const {frontmatter} = Astro.props
     </div>   
 
     <div class:list={['articleDescription', 
-    {articleDescriptionOnRight: frontmatter.imageSide==='left'}, 
-    {articleDescriptionOnLeft: frontmatter.imageSide==='right'}]}>
+        {articleDescriptionOnRight: frontmatter.imageSide==='left'}, 
+        {articleDescriptionOnLeft: frontmatter.imageSide==='right'},
+        {articleDescriptionNoImage: frontmatter.imageSide==='none'}]}>
         <p> 
             <Fragment set:html={frontmatter.description} />
         </p>
@@ -37,6 +39,7 @@ const {frontmatter} = Astro.props
 </div>
 </section>
 <style>
+
 .articleContainer {
     margin-bottom: 4em;
     padding-left: 10px;
@@ -52,8 +55,9 @@ const {frontmatter} = Astro.props
 
 .articleHeader {
     display: block;
+    text-align: center;
     font-size: 2.0em;
-    line-height: 0.5em;
+    line-height: 1.2em;
     font-weight: bold;
 }
 
@@ -67,6 +71,12 @@ const {frontmatter} = Astro.props
     font-size: 1.0em;
     line-height: 1.5em;
 } 
+
+.articleDescription a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
 
 .hide {
     display: none;
@@ -100,6 +110,7 @@ video {
         font-size: 2.5em;
         line-height: 0.5em;
         font-weight: bold;
+        text-align: left;
     }
     .articleDescription{
         font-size: 1.5em;
@@ -107,6 +118,13 @@ video {
         align-self: center;
     }
 
+    .articleDescription a {
+        display: flex;
+        justify-content: left;
+        text-decoration: none;
+    }
+
+    /* ImageOnLeft */
     .articleImageOnLeft {
         grid-row: 2;
         grid-column: 2; 
@@ -117,6 +135,7 @@ video {
         grid-column: 3;
     } 
 
+    /* ImageOnRight */
     .articleImageOnRight {
         grid-row: 2;
         grid-column: 3; 
@@ -126,6 +145,17 @@ video {
         grid-row: 2;
         grid-column: 2;
     } 
+    
+    /* No image */
+    .articleImageNone {
+        display: none;
+    }
+
+    .articleDescriptionNoImage {
+        grid-row: 2;
+        grid-column: 2 / span 2;
+    }
+
 }
 
 </style>

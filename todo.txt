@@ -1,6 +1,6 @@
-- zsákkata szöveget a szürkére
-- intro szöveg menjen a borítóra
-- article headerek középre rendezve
+ok - zsákkata szöveget a szürkére
+? - intro szöveg menjen a borítóra
+Mobilon - article headerek középre rendezve
 - szolgáltatások rész legyen a főoldalon, egymás mellé rendezve - legyen besűrítve egymás mellé mint a vélemények
     - utána maradhat a többi 
 - a szolgáltatások részen szövegcsere majd és Kérj időpontot gomb mindegyihez
