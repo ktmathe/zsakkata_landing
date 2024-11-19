@@ -1,0 +1,109 @@
+---
+const {cards} = Astro.props
+const {title} = Astro.props
+---
+<section>
+<div class="container">
+    <div class="header">{title}</div>
+    <div class="grid">
+        {cards.map((review) => (
+            <div class="card">
+
+                <div class=cardImage>
+                    <img src={review.frontmatter.image.url} alt={review.frontmatter.image.alt} />
+                </div>   
+                <div class="cardTitle">
+                    <Fragment set:html={review.frontmatter.title} />
+                </div>
+                <div class=cardDescription>
+                    <p> 
+                        <Fragment set:html={review.frontmatter.description} />
+                    </p>
+                </div>    
+            </div>            
+        ))}
+    </div>
+</div>
+</section>
+<style>
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.grid {        
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+    padding: 1em;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    background-color: #f7e5ddb6;
+}
+
+.header, .cardImage, .cardDescription, .fivestar, .container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+}
+
+.header {
+    text-align: center;
+    display: block;
+    margin-bottom: 2em;
+    font-size: 2.5em;
+    line-height: 0.5em;
+    font-weight: bold;
+}
+
+.cardTitle {
+    text-align: center;
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.cardImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    width: 80%;
+    max-width: 40%;
+}
+
+.cardImage img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+} 
+
+.cardDescription {
+    font-size: 1.0em;
+    line-height: 1.5em;
+} 
+
+@media screen and (min-width: 1200px) {
+    .grid {        
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    .card {
+        width: 350px;
+    }
+}
+
+</style>

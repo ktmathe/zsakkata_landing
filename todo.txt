@@ -4,9 +4,9 @@ Mobilon - article headerek középre rendezve
 - szolgáltatások rész legyen a főoldalon, egymás mellé rendezve - legyen besűrítve egymás mellé mint a vélemények
     - utána maradhat a többi 
 - a szolgáltatások részen szövegcsere majd és Kérj időpontot gomb mindegyihez
-- vélemények valami carouseles
 - Rólam: egy kép majd baloldalra
 - Kapcsolat mailchimp integráció
 - Cégeknek oldal: jön szöveg
 - SEO - meta tageket küldi
+- vélemények valami carouseles
 
