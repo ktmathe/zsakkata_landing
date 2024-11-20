@@ -9,4 +9,5 @@ ok - szolgáltatások rész legyen a főoldalon, egymás mellé rendezve - legye
 - Cégeknek oldal: jön szöveg
 - SEO - meta tageket küldi
 - vélemények valami carouseles
+- mobilon a lenyíló menü alja rosszul olvasható mert összeér a header szöveggel
 
