@@ -6,20 +6,26 @@ const {title} = Astro.props
 <div class="container">
     <div class="header">{title}</div>
     <div class="grid">
-        {cards.map((review) => (
+        {cards.map((card) => (
             <div class="card">
-
                 <div class=cardImage>
-                    <img src={review.frontmatter.image.url} alt={review.frontmatter.image.alt} />
+                    <img src={card.frontmatter.image.url} alt={card.frontmatter.image.alt} />
                 </div>   
                 <div class="cardTitle">
-                    <Fragment set:html={review.frontmatter.title} />
+                    <Fragment set:html={card.frontmatter.title} />
                 </div>
                 <div class=cardDescription>
                     <p> 
-                        <Fragment set:html={review.frontmatter.description} />
+                        <Fragment set:html={card.frontmatter.description} />
                     </p>
-                </div>    
+                </div>  
+                <div class="button">
+                    <a href={card.frontmatter.buttonLink}>
+                        <button class:list={["btn", {"hide": card.frontmatter.buttonText === ""}]}>
+                            <Fragment set:html={card.frontmatter.buttonText} />
+                        </button>
+                    </a>  
+                </div>
             </div>            
         ))}
     </div>
@@ -27,10 +33,17 @@ const {title} = Astro.props
 </section>
 <style>
 
+section {
+    background-color: rgba(183, 165, 156, 0.74);
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+    padding-top: 1em;
+}
+
 .container {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
+    padding-bottom: 20px;
 }
 
 .grid {        
@@ -47,29 +60,34 @@ const {title} = Astro.props
     padding: 1em;
     border-radius: 20px;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
-    background-color: #f7e5ddb6;
+    background-color: #ffffffda;
 }
 
 .header, .cardImage, .cardDescription, .fivestar, .container {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 85%;
+    width: 85%;    
 }
 
 .header {
     text-align: center;
     display: block;
-    margin-bottom: 2em;
-    font-size: 2.5em;
-    line-height: 0.5em;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    width: 100%;
+    max-width: 1280px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    font-size: 2em;
+    line-height: 1.5em;
     font-weight: bold;
+    background-color: #ffffff81;
 }
 
 .cardTitle {
     text-align: center;
     display: block;
-    margin-bottom: 1em;
     font-size: 1.5em;
     font-weight: bold;
 }
@@ -78,9 +96,8 @@ const {title} = Astro.props
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1em;
-    width: 80%;
-    max-width: 40%;
+    padding-bottom: 1.5em;
+    width: 100%;
 }
 
 .cardImage img {
@@ -92,13 +109,23 @@ const {title} = Astro.props
 .cardDescription {
     font-size: 1.0em;
     line-height: 1.5em;
+    text-align: center;
 } 
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
 
 @media screen and (min-width: 1200px) {
     .grid {        
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1280px;
     }
 
     .card {
