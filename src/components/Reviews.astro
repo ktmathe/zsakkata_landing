@@ -8,13 +8,13 @@ const {reviews} = Astro.props
         {reviews.map((review) => (
             <div class="reviewCard">
 
-                <div class=reviewImage>
+                <div class="reviewImage">
                     <img src={review.frontmatter.image.url} alt={review.frontmatter.image.alt} />
                 </div>   
                 <div class="reviewName">
                     <Fragment set:html={review.frontmatter.name} />
                 </div>
-                <div class=reviewDescription>
+                <div class="reviewDescription">
                     <p> 
                         <Fragment set:html={review.frontmatter.review} />
                     </p>
