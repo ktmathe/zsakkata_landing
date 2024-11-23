@@ -1,5 +1,5 @@
 ---
-title: '<p>Cégeknek</p>'
+title: 'Cégeknek'
 description: '<ul><li>Asszertív kommunikáció</li>
 <li>EMK (ErőszakMentes Kommunikáció) tréningek</li>
 <li>Social média továbbképzés</li></ul>'

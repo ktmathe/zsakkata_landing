@@ -1,5 +1,5 @@
 ---
-title: '<p>Önazonos és támogató kommunikáció</p>'
+title: 'Önazonos és támogató kommunikáció'
 description: '<p>Egyéni kommunikációs és social media mentorálást tartok alkotóknak, művészeknek, egyéni vállalkozóknak, coachoknak, jóga tanároknak... bárkinek, aki úgy érzi elakadt.</p>'
 buttonText: "Ismerj meg!"
 buttonLink: "/rolam#rolam"

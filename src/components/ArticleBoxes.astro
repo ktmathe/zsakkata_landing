@@ -4,7 +4,7 @@ const {title} = Astro.props
 ---
 <section>
 <div class="container">
-    <div class="header">{title}</div>
+    <h1 class="header">{title}</h1>
     <div class="grid">
         {cards.map((card) => (
             <div class="card">
@@ -76,7 +76,6 @@ section {
     max-width: 1280px;
     border-radius: 20px;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
-    font-size: 2em;
     line-height: 1.5em;
     font-weight: bold;
     background-color: #ffffff81;

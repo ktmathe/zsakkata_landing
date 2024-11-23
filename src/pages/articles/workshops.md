@@ -1,5 +1,5 @@
 ---
-title: '<p>Workshopok</p>'
+title: 'Workshopok'
 description: '<p>Workshopok keretében csoportosan is megtanulhatod a kommunikációs, marketing és social média alapokat.</p>'
 buttonText: "ÉRDEKEL"
 buttonLink: "/szolgaltatasok#workshop"

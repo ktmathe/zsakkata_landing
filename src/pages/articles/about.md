@@ -1,5 +1,5 @@
 ---
-title: '<p>Önazonos Te...<br>Támogató Én</p>'
+title: 'Önazonos Te...<br>Támogató Én'
 description: '<p>Hiszem, hogy nem kell egyedül csinálnod és hiszem, hogy te tudod a legjobban!</p>
  <p>Egyéni marketing és kommunikációs tanácsadás integrált coaching szemlélettel.</p>'
 buttonText: "ÉRDEKEL"
