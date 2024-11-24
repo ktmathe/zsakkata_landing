@@ -7,11 +7,6 @@ import Navigation from "./Navigation.astro";
     <Hamburger />
     <Navigation />
 </nav>
-    <!-- <picture>
-        <source srcset="/header_small.webp" media="(max-width: 600px)">
-        <source srcset="/header2.webp" >
-        <img src="/header2.webp" alt="Zsák Kata">
-    </picture> -->
     <div class="text-box">
         <h1 class="heading-primary">
             <span class="heading-primary-main">Zsák Kata</span>
@@ -58,6 +53,7 @@ import Navigation from "./Navigation.astro";
     font-weight: 500;
     letter-spacing: 25px;
     margin-bottom: 1em;
+    animation: fadeIn 0.5s ease-in;
 }
 
 .heading-primary-sub {
@@ -65,11 +61,15 @@ import Navigation from "./Navigation.astro";
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: 10.3px;
+    animation: fadeIn 0.5s ease-in 0.3s;
+    animation-fill-mode: backwards;
 }
 
 .btn{
     font-size: 1.2em;
     padding: 1em 2.5em;
+    animation: fadeIn 0.5s ease-in 0.7s;
+    animation-fill-mode: backwards;
 }
 
 @media screen and (min-width: 1100px) {
@@ -90,32 +90,27 @@ import Navigation from "./Navigation.astro";
 }
 
 .text-box {
-    position: absolute;
-    top: 45%;
-    left: 50%;
     transform: translate(-80%, -50%);
-    text-align: center;
-}
-
-.heading-primary {
-    text-transform: uppercase;
-    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .heading-primary-main {
-    display: block;
     font-size: 3.5rem;
-    font-weight: 500;
     letter-spacing: 35px;
-    margin-bottom: 1em;
 }
 
 .heading-primary-sub {
-    display: block;
     font-size: 1.5rem;
-    font-weight: 500;
     letter-spacing: 14.3px;
 }
 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </style>
