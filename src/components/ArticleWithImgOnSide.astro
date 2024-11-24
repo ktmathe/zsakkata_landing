@@ -26,9 +26,7 @@ const {frontmatter} = Astro.props
         {articleDescriptionOnRight: frontmatter.imageSide==='left'}, 
         {articleDescriptionOnLeft: frontmatter.imageSide==='right'},
         {articleDescriptionNoImage: frontmatter.imageSide==='none'}]}>
-        <p> 
             <Fragment set:html={frontmatter.description} />
-        </p>
         <a href={frontmatter.buttonLink} class:list={["btn", {"hide": frontmatter.buttonText === ""}]}>
             <Fragment set:html={frontmatter.buttonText} />
         </a>  
@@ -38,17 +36,22 @@ const {frontmatter} = Astro.props
 </section>
 <style>
 
+p {
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+}
+
 .articleContainer {
-    margin-bottom: 4em;
+    margin-bottom: 3em;
     padding-left: 10px;
     padding-right: 10px;
 }
 
 .articleContainer, .articleHeader, .articleImage, .articleDescription {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
 }
 
@@ -62,10 +65,9 @@ const {frontmatter} = Astro.props
 } 
 
 .btn {
-    display: flex;
-    justify-content: center;
     max-width: fit-content;
-    
+    align-self: center;
+    margin-top: 2em;
 }
 
 .hide {
@@ -95,12 +97,7 @@ video {
 
     .articleHeader {
         grid-row: 1;
-        grid-column: 2 / span 3;
-        text-align: left;
-    }
-    .articleDescription{
-        line-height: 1.5em;
-        align-self: center;
+        grid-column: 1 / span 4;
     }
 
     .btn {

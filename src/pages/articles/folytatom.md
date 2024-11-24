@@ -6,7 +6,7 @@ description: '<p>Nem könnyű egyedül járni az utad...</p>
 <p>Nem látod az utad tovább?</p>
 <p>Bizonytalan vagy döntésekben?</p>
 <p>Segítek!</p>'
-buttonText: "Kérj időpontot egyéni konzultációra!"
+buttonText: "Kérj időpontot!"
 buttonLink: "#kapcsolat"
 image: 
     url_big: '/folytatom.webp'
