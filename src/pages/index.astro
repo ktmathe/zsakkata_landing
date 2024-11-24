@@ -12,7 +12,6 @@ const business = (await Astro.glob('./articles/business.md'))[0].frontmatter
 const reviews = await Astro.glob('../pages/reviews/*.md')
 ---
 <BaseLayout pageTitle={pageTitle}>
-<ArticleWithImgOnSide frontmatter={intro}/>
 <ArticleBoxes cards={szolgaltatasokCards} title="Mit tudunk együtt csinálni?"/>
 <ArticleWithImgOnSide frontmatter={about}/>
 <ArticleWithImgOnSide frontmatter={workshops}/>

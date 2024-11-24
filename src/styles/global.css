@@ -56,19 +56,34 @@ body {
     margin-bottom: 50px;
 }
 
-.btn {
+.btn:link, 
+.btn:visited {
+    display: inline-block;
     font-size: 1.5rem;
     background-color: #ba8f78;
+    color: white; 
+    text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    text-decoration: none;
     border: none;
     border-radius: 50px;
-    color: white;
     padding: 10px 80px 10px 80px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    transition: all .2s;
 }
 
 .btn:hover {
     background-color: #d25525;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
 
 h1 {
     font-size: 2.0em;

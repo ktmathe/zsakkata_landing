@@ -6,7 +6,7 @@ ok - szolgáltatások rész legyen a főoldalon, egymás mellé rendezve - legye
 - a szolgáltatások részen szövegcsere majd és Kérj időpontot gomb mindegyihez
 - Rólam: egy kép majd baloldalra
 - Kapcsolat mailchimp integráció
-- Cégeknek oldal: jön szöveg
+OK - Cégeknek oldal: jön szöveg
 - SEO - meta tageket küldi
 - vélemények valami carouseles
 - mobilon a lenyíló menü alja rosszul olvasható mert összeér a header szöveggel

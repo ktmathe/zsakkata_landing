@@ -29,11 +29,9 @@ const {frontmatter} = Astro.props
         <p> 
             <Fragment set:html={frontmatter.description} />
         </p>
-        <a href={frontmatter.buttonLink}>
-            <button class:list={["btn", {"hide": frontmatter.buttonText === ""}]}>
-                <Fragment set:html={frontmatter.buttonText} />
-            </button>
-        </a>
+        <a href={frontmatter.buttonLink} class:list={["btn", {"hide": frontmatter.buttonText === ""}]}>
+            <Fragment set:html={frontmatter.buttonText} />
+        </a>  
     </div>
 
 </div>
@@ -47,27 +45,27 @@ const {frontmatter} = Astro.props
 }
 
 .articleContainer, .articleHeader, .articleImage, .articleDescription {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
 }
 
 .articleHeader {
-    display: block;
     text-align: center;
 }
 
 .articleImage img {
     width: 100%;
     border-radius: 20px;
-    display: block;
 } 
 
-.articleDescription a {
+.btn {
     display: flex;
     justify-content: center;
-    text-decoration: none;
+    max-width: fit-content;
+    
 }
 
 .hide {
@@ -84,7 +82,6 @@ video {
     .articleContainer, .articleHeader, 
     .articleImage, .articleDescription {
         width: 100%;
-        display: inline-block;
     }   
 
     .articleContainer {        
@@ -106,10 +103,8 @@ video {
         align-self: center;
     }
 
-    .articleDescription a {
-        display: flex;
-        justify-content: left;
-        text-decoration: none;
+    .btn {
+        align-self: flex-start;
     }
 
     /* ImageOnLeft */

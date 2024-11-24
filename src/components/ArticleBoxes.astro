@@ -19,13 +19,9 @@ const {title} = Astro.props
                         <Fragment set:html={card.frontmatter.description} />
                     </p>
                 </div>  
-                <div class="button">
-                    <a href={card.frontmatter.buttonLink}>
-                        <button class:list={["btn", {"hide": card.frontmatter.buttonText === ""}]}>
-                            <Fragment set:html={card.frontmatter.buttonText} />
-                        </button>
-                    </a>  
-                </div>
+                <a href={card.frontmatter.buttonLink} class:list={["btn", {"hide": card.frontmatter.buttonText === ""}]}>
+                        <Fragment set:html={card.frontmatter.buttonText} />
+                </a>  
             </div>            
         ))}
     </div>
@@ -108,7 +104,7 @@ section {
     text-align: center;
 } 
 
-.button {
+.btn {
     display: flex;
     justify-content: center;
     margin-top: auto;
