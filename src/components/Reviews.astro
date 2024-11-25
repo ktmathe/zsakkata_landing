@@ -3,7 +3,7 @@ const {reviews} = Astro.props
 ---
 <section>
 <div class="reviewContainer">
-    <div class="reviewHeader">Vélemények</div>
+    <h1 class="reviewHeader">Vélemények</h1>
     <div class="reviewGrid">
         {reviews.map((review) => (
             <div class="reviewCard">
@@ -11,9 +11,9 @@ const {reviews} = Astro.props
                 <div class="reviewImage">
                     <img src={review.frontmatter.image.url} alt={review.frontmatter.image.alt} />
                 </div>   
-                <div class="reviewName">
+                <h2 class="reviewName">
                     <Fragment set:html={review.frontmatter.name} />
-                </div>
+                </h2>
                 <div class="reviewDescription">
                     <p> 
                         <Fragment set:html={review.frontmatter.review} />
@@ -70,17 +70,13 @@ const {reviews} = Astro.props
     text-align: center;
     display: block;
     margin-bottom: 2em;
-    font-size: 2.5em;
-    line-height: 0.5em;
-    font-weight: bold;
 }
 
 .reviewName {
     text-align: center;
     display: block;
     margin-bottom: 1em;
-    font-size: 1.5em;
-    font-weight: bold;
+    text-transform: none;
 }
 
 .reviewImage {
@@ -99,7 +95,6 @@ const {reviews} = Astro.props
 } 
 
 .reviewDescription {
-    font-size: 1.0em;
     line-height: 1.5em;
 } 
 

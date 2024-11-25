@@ -11,9 +11,9 @@ const {title} = Astro.props
                 <div class="cardImage">
                     <img src={card.frontmatter.image.url} alt={card.frontmatter.image.alt} />
                 </div>   
-                <div class="cardTitle">
+                <h2 class="cardTitle">
                     <Fragment set:html={card.frontmatter.title} />
-                </div>
+                </h2>
                 <div class="cardDescription">
                     <p> 
                         <Fragment set:html={card.frontmatter.description} />
@@ -73,15 +73,12 @@ section {
     border-radius: 20px;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
     line-height: 1.5em;
-    font-weight: bold;
     background-color: #ffffff81;
 }
 
 .cardTitle {
     text-align: center;
     display: block;
-    font-size: 1.5em;
-    font-weight: bold;
 }
 
 .cardImage {
@@ -99,7 +96,6 @@ section {
 } 
 
 .cardDescription {
-    font-size: 1.0em;
     line-height: 1.5em;
     text-align: center;
 } 

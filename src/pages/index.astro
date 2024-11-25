@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 import ArticleWithImgOnSide from "../components/ArticleWithImgOnSide.astro"
 import Reviews from "../components/Reviews.astro"
 import ArticleBoxes from "../components/ArticleBoxes.astro"
+import Intro from "../components/Intro.astro"
 const pageTitle = "Zsák Kata - önazonos és támogató kommunikáció"
 const intro = (await Astro.glob('./articles/intro.md'))[0].frontmatter
 const szolgaltatasokCards = await Astro.glob('../pages/szolgaltatasokCards/*.md')
@@ -12,6 +13,7 @@ const business = (await Astro.glob('./articles/business.md'))[0].frontmatter
 const reviews = await Astro.glob('../pages/reviews/*.md')
 ---
 <BaseLayout pageTitle={pageTitle}>
+<Intro/>
 <ArticleBoxes cards={szolgaltatasokCards} title="Mit tudunk együtt csinálni?"/>
 <ArticleWithImgOnSide frontmatter={about}/>
 <ArticleWithImgOnSide frontmatter={workshops}/>
