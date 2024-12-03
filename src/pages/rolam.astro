@@ -11,16 +11,22 @@ const pageTitle = "Zsák Kata - Rólam";
 <section id="rolam" class="section">
 <h1 class="pageHeader">Rólam</h1>
 <div class="container">
-    <p>Kommunikációval, marketinggel és social mediával több mint tíz éve foglalkozom, és azóta szenvedélyemmé vált az, hogy másokat segítsek eligazodni ezen a folyamatosan változó területen. Egyéni kommunikációs és social media mentorálást tartok alkotóknak, művészeknek, egyéni vállalkozóknak, coachoknak és bárkinek, aki úgy érzi, elakadt. Hiszem, hogy a hatékony kommunikáció nemcsak eszköz, hanem kulcs az önmegvalósításhoz és a sikerhez.</p>
-    <h2>Miért fordulj hozzám?</h2>
-    <p>Sokan azt érzik, hogy a közösségi médiával dolgozni olyan, mintha foghúzásra ülnének le: kényszeres, nehézkes és stresszes. Megszólítani a közönséget, jól kommunikálni a tevékenységünkről, vagy egyszerűen csak eldönteni, mit és hogyan osszunk meg, sokaknak kihívást jelent. Ha ismerős neked is, hogy:</p>
-    <ul>
-    <li>fogalmad sincs, mit posztolj, pedig tudod, hogy kellene,</li>
-    <li>utólag jut eszedbe, hogy valamit jó lett volna megosztani,</li>
-    <li>nem tudod, hogyan rendszerezd a sokféle dolgot, amit egyszerre csinálsz,</li>
-    <li>bizonytalan vagy abban, mennyit ossz meg magadról,</li>
-    <li>vagy egyszerűen azt érzed, hogy elveszel a marketing világában, akkor jó helyen jársz.</li>
-    </ul>
+    <div class="flex-container">
+        <div class="image">
+        </div>
+        <div class="flex-text">
+            <p>Kommunikációval, marketinggel és social mediával több mint tíz éve foglalkozom, és azóta szenvedélyemmé vált az, hogy másokat segítsek eligazodni ezen a folyamatosan változó területen. Egyéni kommunikációs és social media mentorálást tartok alkotóknak, művészeknek, egyéni vállalkozóknak, coachoknak és bárkinek, aki úgy érzi, elakadt. Hiszem, hogy a hatékony kommunikáció nemcsak eszköz, hanem kulcs az önmegvalósításhoz és a sikerhez.</p>
+            <h2>Miért fordulj hozzám?</h2>
+            <p>Sokan azt érzik, hogy a közösségi médiával dolgozni olyan, mintha foghúzásra ülnének le: kényszeres, nehézkes és stresszes. Megszólítani a közönséget, jól kommunikálni a tevékenységünkről, vagy egyszerűen csak eldönteni, mit és hogyan osszunk meg, sokaknak kihívást jelent. Ha ismerős neked is, hogy:</p>
+            <ul>
+                <li>fogalmad sincs, mit posztolj, pedig tudod, hogy kellene,</li>
+                <li>utólag jut eszedbe, hogy valamit jó lett volna megosztani,</li>
+                <li>nem tudod, hogyan rendszerezd a sokféle dolgot, amit egyszerre csinálsz,</li>
+                <li>bizonytalan vagy abban, mennyit ossz meg magadról,</li>
+                <li>vagy egyszerűen azt érzed, hogy elveszel a marketing világában, akkor jó helyen jársz.</li>
+            </ul>
+        </div>
+    </div>
     <p>Pár alkalmas találkozó során segítek rendet tenni a kommunikációdban. Közösen kialakítjuk a számodra leghatékonyabb stratégiát:</p>
     <ul>
     <li>megmutatom, mely platformokon és hogyan érdemes jelen lenned,
@@ -53,5 +59,35 @@ const pageTitle = "Zsák Kata - Rólam";
         margin-left: auto;
         margin-right: auto;
         padding: 0 20px;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image {
+        background-image: url('/rolam.webp');
+        background-repeat: no-repeat;
+        background-position: 30% 40%;
+        width: 100%;
+        height: 500px; 
+    }
+    
+    @media screen and (min-width: 750px) {
+        .flex-container {
+            flex-direction: row;
+        }
+
+        .image {
+            background-size: cover;
+            background-position: center;
+            height: 650px; 
+            margin: 22px 22px 22px 0;
+        }
+
+        .flex-text {
+            width: 166%;
+        }
     }
 </style>
